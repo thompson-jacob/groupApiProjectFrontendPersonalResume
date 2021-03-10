@@ -1,17 +1,17 @@
 <template>
-
-<div class="profile">
-  <p> {{ student }} </p>
-  <p> {{ student.last_name }} </p>
-
-
+  <div class="profile">
+    <p>{{ student }}</p>
+    <p>{{ student.last_name }}</p>
   </div>
-  </template>
+</template>
 
 <style></style>
 
 <script>
+
 import axios from 'axios';
+
+
 
 
 export default {
@@ -33,7 +33,9 @@ export default {
     };
   },
   created: function() {
+
      this.showProfile();
+
   },
   methods: {
     showProfile: function() {
