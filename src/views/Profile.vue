@@ -6,9 +6,9 @@
 import axios from "axios";
 
 export default {
-  data: function(){
+  data: function() {
     return {
-      student = {
+      student: {
         first_name: "Emmanuel",
         last_name: "Sanchez",
         email: "emanuel@test.com",
@@ -22,15 +22,15 @@ export default {
         photo: "https://avatars.dicebear.com/api/male/emanuel.svg",
       },
     };
-  };
+  },
   created: function() {
-    <!-- this.etc -->
+    // <!-- this.etc -->
   },
   methods: {
     showStudent: function(student) {
       console.log("showstudent", student.first_name, student);
       document.querySelector("#student-details").showModal();
     },
-  }
-}
+  },
+};
 </script>
