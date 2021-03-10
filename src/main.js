@@ -7,7 +7,7 @@ import axios from "axios";
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
 axios.defaults.baseURL =
   process.env.NODE_ENV === "development"
-    ? "https://whispering-sands-76473.herokuapp.com/api/students"
+    ? "https://whispering-sands-76473.herokuapp.com/api/students"å
     : "http://localhost:3000";
 
 // This adds the jwt token for authorization
