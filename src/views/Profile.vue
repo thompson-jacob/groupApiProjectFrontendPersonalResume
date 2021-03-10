@@ -8,18 +8,14 @@
 <style></style>
 
 <script>
-<<<<<<< HEAD
-import axios from 'axios';
 
-
-=======
 
 import axios from 'axios';
 
 
 
 
->>>>>>> acea711318f07548aa1ea5435b1823da4752d5d6
+
 export default {
   data: function() {
     return {
@@ -39,13 +35,9 @@ export default {
     };
   },
   created: function() {
-<<<<<<< HEAD
-     this.showProfile();
-=======
 
      this.showProfile();
 
->>>>>>> acea711318f07548aa1ea5435b1823da4752d5d6
   },
   methods: {
     showProfile: function() {
