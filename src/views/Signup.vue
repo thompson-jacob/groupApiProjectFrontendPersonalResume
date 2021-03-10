@@ -50,10 +50,11 @@ export default {
         password_confirmation: this.passwordConfirmation
       };
       axios
-        .post("/api/users", params)
+        .post("/api/students", params)
         .then(response => {
           console.log(response.data);
           this.$router.push("/login");
+       
         })
         .catch(error => {
           this.errors = error.response.data.errors;
