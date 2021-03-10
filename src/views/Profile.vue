@@ -19,9 +19,9 @@
       <!-- this.etc -->
     },
     methods: {
-      showUser: function(user) {
-        console.log("showUser", user.title, user);
-        document.querySelector("#user-details").showModal();
+      showStudent: function(student) {
+        console.log("showstudent", student.title, student);
+        document.querySelector("#student-details").showModal();
       },
     }
   }
