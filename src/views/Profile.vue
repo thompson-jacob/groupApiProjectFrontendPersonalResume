@@ -1,11 +1,9 @@
 <template>
-<div class="profile">
-<p> {{ student.first_name }} </p>
-<p> {{ student.last_name }} </p>
-
-
+  <div class="profile">
+    <p>{{ student.first_name }}</p>
+    <p>{{ student.last_name }}</p>
   </div>
-  </template>
+</template>
 <style></style>
 
 <script>
