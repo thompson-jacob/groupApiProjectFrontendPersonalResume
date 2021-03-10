@@ -1,14 +1,13 @@
 <template>
   <div class="profile">
-    <p>{{ student.first_name }}</p>
+    <p>{{ student }}</p>
     <p>{{ student.last_name }}</p>
   </div>
 </template>
+
 <style></style>
 
 <script>
-import axios from "axios";
-
 export default {
   data: function() {
     return {
@@ -28,7 +27,7 @@ export default {
     };
   },
   created: function() {
-    // <!-- this.etc -->
+    //
   },
   methods: {
     showStudent: function(student) {
