@@ -8,13 +8,7 @@
 <style></style>
 
 <script>
-
-
-import axios from 'axios';
-
-
-
-
+import axios from "axios";
 
 export default {
   data: function() {
@@ -35,13 +29,11 @@ export default {
     };
   },
   created: function() {
-
-     this.showProfile();
-
+    this.showProfile();
   },
   methods: {
     showProfile: function() {
-      axios.get("/api/students/1").then(response => {
+      axios.get("/").then(response => {
         console.log(response.data);
         this.student = response.data;
       });
