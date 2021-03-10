@@ -8,31 +8,41 @@
 <style></style>
 
 <script>
+
+import axios from 'axios';
+
+
+
+
 export default {
   data: function() {
     return {
       student: {
-        first_name: "Emmanuel",
-        last_name: "Sanchez",
-        email: "emanuel@test.com",
-        phone_number: "555-555-1234",
-        short_bio: "Actualize grad versed in all the things",
-        linkedin_url: "linkedin.com/esanchez",
-        twitter_handle: "esanchizzle",
-        website_url: "hireme.com",
-        resume_url: "esanchez.com",
-        github_url: "github.com/esanchez",
-        photo: "https://avatars.dicebear.com/api/male/emanuel.svg",
+        first_name: "",
+        last_name: "",
+        email: "",
+        phone_number: "",
+        short_bio: "",
+        linkedin_url: "",
+        twitter_handle: "",
+        website_url: "",
+        resume_url: "",
+        github_url: "",
+        photo: "",
       },
     };
   },
   created: function() {
-    //
+
+     this.showProfile();
+
   },
   methods: {
-    showStudent: function(student) {
-      console.log("showstudent", student.first_name, student);
-      document.querySelector("#student-details").showModal();
+    showProfile: function() {
+      axios.get("/api/students/1").then(response => {
+        console.log(response.data);
+        this.student = response.data;
+      });
     },
   },
 };
