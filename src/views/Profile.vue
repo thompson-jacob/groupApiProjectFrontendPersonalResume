@@ -29,6 +29,12 @@ export default {
       console.log("showUser", user.title, user);
       document.querySelector("#user-details").showModal();
     },
+    methods: {
+      showStudent: function(student) {
+        console.log("showstudent", student.title, student);
+        document.querySelector("#student-details").showModal();
+      },
+    }
   }
 }
 </script>
