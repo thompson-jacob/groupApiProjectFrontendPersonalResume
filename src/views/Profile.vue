@@ -1,5 +1,11 @@
-<template></template>
+<template>
+<div class="profile">
+<p> {{ student.first_name }} </p>
+<p> {{ student.last_name }} </p>
 
+
+  </div>
+  </template>
 <style></style>
 
 <script>
