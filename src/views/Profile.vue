@@ -1,6 +1,7 @@
 <template>
   <div class="profile">
     <div class="container">
+
     <p> Your Profile </p>
     <p>{{ this.student.first_name }} {{ student[0].last_name }}</p>
     <p>{{ student[0].email }} </p>
@@ -61,11 +62,9 @@
       <div class="form-group">
         <label>Resume:</label>
         <input type="text" class="form-control" v-model="resume_url">
+
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
-    </form>
-  </div>
-   </div>
+    </div>
     <!-- <p> {{ student[0]["experiences"] }} </p> -->
   </div>
 </template>
@@ -75,9 +74,7 @@
 <script>
 import axios from "axios";
 
-
 export default {
-  
   data: function() {
     return {
       student: {
@@ -104,10 +101,10 @@ export default {
           name: "",
           description: "",
           url: "",
-          screenshot:"",
+          screenshot: "",
         },
         skills: {
-          skill_name:""
+          skill_name: "",
         },
         educations: {
           start_date: "",
@@ -116,9 +113,7 @@ export default {
           university_name: "",
           details: "",
         },
-
       },
-      
     };
   },
   created: function() {
