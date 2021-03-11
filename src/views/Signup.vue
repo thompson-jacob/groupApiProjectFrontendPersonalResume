@@ -9,11 +9,11 @@
       </ul>
       <div class="form-group">
         <label>First Name:</label>
-        <input type="text" class="form-control" v-model="firstname" />
+        <input type="text" class="form-control" v-model="first_name" />
       </div>
       <div class="form-group">
         <label>Last Name:</label>
-        <input type="text" class="form-control" v-model="lastname" />
+        <input type="text" class="form-control" v-model="last_name" />
       </div>
       <div class="form-group">
         <label>Email:</label>
@@ -25,7 +25,7 @@
       </div>
       <div class="form-group">
         <label>Bio:</label>
-        <input type="bio" class="form-control" v-model="bio" />
+        <input type="bio" class="form-control" v-model="short_bio" />
       </div>
       <div class="form-group">
         <label>Photo:</label>
@@ -77,6 +77,7 @@ export default {
         .post("/api/students", params)
         .then(response => {
           console.log(response.data);
+          console.log(response.data.jwt);
           this.$router.push("/login");
         })
         .catch(error => {
