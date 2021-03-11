@@ -33,6 +33,7 @@ export default {
   },
   methods: {
     submit: function() {
+
       var params = {
         id: this.id,
         email: this.email,
@@ -44,7 +45,8 @@ export default {
           axios.defaults.headers.common["Authorization"] =
             "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/" + this.$route.params.id );
+          this.$router.push("/profile?id=" + response.data.student_id );
+        
         })
         .catch(error => {
           console.log(error.response);
