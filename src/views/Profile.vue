@@ -1,6 +1,45 @@
 <template>
   <div class="profile">
     <div class="container">
+      <h1>All Contacts</h1>
+      <div v-for="student in students" v-bind:key="student.id">
+        <h2>{{ student.first_name }} {{ student.last_name }}</h2>
+        <p><button v-on:click="showStudent(student)">More Info</button></p>
+        <p><img v-bind:src="student.photo" alt="student photo" /></p>
+      </div>
+      <dialog id="contact-details">
+        <form method="dialog">
+          <h1>Student Info</h1>
+          <p>Phone: {{ currentStudent.phone_number }}</p>
+          <p>Email: {{ currentStudent.email }}</p>
+          <p>Short Bio: {{ currentStudent.short_bio }}</p>
+          <p>LinkedIn: {{ currentStudent.linkedin_url }}</p>
+          <p>Twitter: {{ currentStudent.twitter_handle }}</p>
+          <p>Website: {{ currentStudent.website_url }}</p>
+          <p>Github: {{ currentStudent.github_url }}</p>
+          <p>Resume: {{ currentStudent.resume_url }}</p>
+          <button>Close</button>
+        </form>
+      </dialog>
+      <!-- <p>Your Profile</p>
+      <p>{{ student[0].first_name }} {{ student[0].last_name }}</p>
+      <p>{{ student[0].email }}</p>
+      <p>{{ student[0].phone_number }}</p>
+      <p>{{ student[0].short_bio }}</p>
+      <p>{{ student[0].linkedin_url }}</p>
+      <p>{{ student[0].twitter_handle }}</p>
+      <p>{{ student[0].website_url }}</p>
+      <p>{{ student[0].github_url }}</p>
+      <p>{{ student[0].resume_url }}</p> -->
+      <button>edit basic info</button>
+      <div class="edit-basic">
+        <form v-on:submit.prevent="updateProfile()">
+          <h1>Edit Profile</h1>
+          <ul>
+            <li class="text-danger" v-for="error in errors" v-bind:key="error">
+              {{ error }}
+            </li>
+          </ul>
 
     <p> Your Profile </p>
     <p>{{ this.student.first_name }} {{ student[0].last_name }}</p>

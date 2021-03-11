@@ -9,13 +9,13 @@
       </ul>
       <div class="form-group">
         <label>Email:</label>
-        <input type="email" class="form-control" v-model="email">
+        <input type="email" class="form-control" v-model="email" />
       </div>
       <div class="form-group">
         <label>Password:</label>
-        <input type="password" class="form-control" v-model="password">
+        <input type="password" class="form-control" v-model="password" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
     return {
       email: "",
       password: "",
-      errors: []
+      errors: [],
     };
   },
   methods: {
@@ -36,15 +36,14 @@ export default {
       var params = {
         id: this.id,
         email: this.email,
-        password: this.password
+        password: this.password,
       };
       axios
         .post("/api/sessions", params)
         .then(response => {
-          axios.defaults.headers.common["Authorization"] =
-            "Bearer " + response.data.jwt;
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
-          this.$router.push("/" + this.$route.params.id );
+          this.$router.push("/" + this.$route.params.id);
         })
         .catch(error => {
           console.log(error.response);
@@ -52,7 +51,7 @@ export default {
           this.email = "";
           this.password = "";
         });
-    }
-  }
+    },
+  },
 };
 </script>
