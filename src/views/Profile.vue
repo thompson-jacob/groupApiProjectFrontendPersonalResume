@@ -2,7 +2,7 @@
   <div class="profile">
     <div class="container">
     <p> Your Profile </p>
-    <p>{{ student[0].first_name }} {{ student[0].last_name }}</p>
+    <p>{{ this.student.first_name }} {{ student[0].last_name }}</p>
     <p>{{ student[0].email }} </p>
     <p>{{ student[0].phone_number }} </p>
     <p> {{ student[0].short_bio }} </p>
@@ -11,6 +11,7 @@
     <p> {{ student[0].website_url }} </p>
     <p> {{ student[0].github_url }} </p>
     <p> {{ student[0].resume_url }} </p>
+     <img v-bind:src="student.photo" alt = "student image" height="300" width="250"/>
     <button>edit basic info</button>
     <div class="edit-basic">
     <form v-on:submit.prevent="updateProfile()">
@@ -130,7 +131,7 @@ export default {
         this.student = response.data;
       });
     },
-    updatePost: function() {
+    updateProfile: function() {
       var params = {
         first_name: this.first_name,
         last_name: this.last_name,
@@ -145,7 +146,8 @@ export default {
         // photo: this.photo,
       };
       axios
-        .patch("/api/students/" + this.$route.params.id, params)
+      // + this.$route.params.id,
+        .patch("/api/students/3"  ,params)
         .then(response => {
           console.log(response.data);
           this.$router.push("/students" + this.$route.params.id);
